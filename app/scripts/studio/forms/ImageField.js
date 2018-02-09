@@ -30,7 +30,7 @@ import {imagelib} from '../../imagelib';
 import {CLIPART_NAMES} from './ImageField-clipart';
 
 
-const WEB_FONTS_API_KEY = 'AIzaSyAtSe8wlXPCUaLQ4LTyPKpbzBBPJAzEXmU';
+const WEB_FONTS_API_KEY = 'AIzaSyDctbUiX06f_0IQVCbeT46hUSo1NJMi5Bs';
 const WEB_FONTS_API_URL = `https://www.googleapis.com/webfonts/v1/webfonts?key=${WEB_FONTS_API_KEY}&fields=items(family)`;
 const WEB_FONTS_CACHE_TIME = 60 * 60 * 1000; // 1 hour
 
