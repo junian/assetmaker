@@ -1,0 +1,1 @@
+This work is derivative from [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) by [romannurik](https://github.com/romannurik) licensed under [Apache-2.0](https://github.com/romannurik/AndroidAssetStudio/blob/master/LICENSE).
