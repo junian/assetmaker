@@ -57,7 +57,7 @@ const NO_SHAPE_EFFECT_OPTIONS = [
 
 export class LauncherIconGenerator extends BaseGenerator {
   get densities() {
-    return new Set(['xxxhdpi' /* must be first */, 'web', 'xxhdpi', 'xhdpi', 'hdpi', 'mdpi']);
+    return new Set(['xxxhdpi' /* must be first */, 'web-512', 'web-1024', 'xxhdpi', 'xhdpi', 'hdpi', 'mdpi']);
   }
 
   get gridOverlaySvg() {
@@ -141,7 +141,7 @@ export class LauncherIconGenerator extends BaseGenerator {
 
     this.densities.forEach(density => {
       let ctx;
-      if (density == 'xxxhdpi' || density == 'web') {
+      if (density == 'xxxhdpi' || density == 'web-512' || density == 'web-1024') {
         ctx = this.regenerateRawAtDensity_(density);
         if (density == 'xxxhdpi') {
           xxxhdpiCtx = ctx;
@@ -158,8 +158,10 @@ export class LauncherIconGenerator extends BaseGenerator {
       }
 
       this.zipper.add({
-        name: (density == 'web')
+        name: (density == 'web-512')
             ? 'web_hi_res_512.png'
+            : (density == 'web-1024')
+            ? 'web_hi_res_1024.png'
             : `res/mipmap-${density}/${values.name}.png`,
         canvas: ctx.canvas
       });
@@ -172,8 +174,11 @@ export class LauncherIconGenerator extends BaseGenerator {
     let values = this.form.getValues();
     let foreSrcCtx = values.foreground ? values.foreground.ctx : null;
     let mult = studio.Util.getMultBaseMdpi(density);
-    if (density == 'web') {
+    if (density == 'web-512') {
       mult = 512 / 48;
+    }
+    else if(density == 'web-1024') {
+      mult = 1024 / 48;
     }
 
     let iconSize = studio.Util.multRound(ICON_SIZE, mult);
