@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-$huePrimary: 'blue-grey';
+$huePrimary: 'blue';
 $colorPrimary: material-color($huePrimary, '500');
 $colorPrimary100: material-color($huePrimary, '100');
 $colorPrimary600: material-color($huePrimary, '600');
 $colorPrimary700: material-color($huePrimary, '700');
 
-$hueAccent: 'blue';
+$hueAccent: 'light-blue';
 $colorAccent: material-color($hueAccent, 'a400');
 
 $colorWhitePrimary: #fff;
