@@ -19,3 +19,7 @@ To build, ensure you have `node` and `npm` installed, and run:
 Once dependencies are installed, run with `gulp`:
 
     $ gulp serve
+
+## License
+
+This work is licensed under [Apache-2.0](https://github.com/junian/assetmaker/blob/master/LICENSE)
